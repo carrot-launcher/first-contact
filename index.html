@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ファーストコンタクト</title>
+<meta name="description" content="自作の未知言語だけで、初対面の知性と交信を成立させる遊び。言語を発明し、その言語で問い、その言語で問い返させる。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=M+PLUS+1+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ground:#E7E8EC;
+    --plate:#FBFBFA;
+    --ink:#161B2B;
+    --ink-soft:#5A6172;
+    --accent:#4A3FD1;
+    --rule:#C4C7D0;
+    --rule-soft:#DCDEE4;
+    --display:"Zen Old Mincho",serif;
+    --body:"Zen Kaku Gothic New",sans-serif;
+    --glyph:"M PLUS 1 Code",monospace;
+  }
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:var(--body);
+    line-height:1.9;
+    letter-spacing:.02em;
+    font-feature-settings:"palt" 1;
+  }
+  .wrap{max-width:44rem;margin:0 auto;padding:0 1.5rem}
+
+  /* ── masthead ───────────────────────────── */
+  .masthead{padding:5rem 0 3rem}
+  .eyebrow{
+    font-family:var(--glyph);
+    font-size:.72rem;
+    letter-spacing:.34em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:0 0 1.6rem;
+  }
+  h1{
+    font-family:var(--display);
+    font-weight:900;
+    font-size:clamp(2.6rem,9vw,4.6rem);
+    line-height:1.08;
+    letter-spacing:.04em;
+    margin:0 0 1.6rem;
+  }
+  .lede{
+    font-family:var(--display);
+    font-size:clamp(1.05rem,2.4vw,1.3rem);
+    line-height:1.9;
+    margin:0;
+  }
+  .lede em{font-style:normal;border-bottom:2px solid var(--accent);padding-bottom:.12em}
+
+  /* ── sections ───────────────────────────── */
+  main{
+    background:var(--plate);
+    border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);
+    padding:3.5rem 0 3rem;
+  }
+  section{margin:0 0 3.5rem}
+  section:last-child{margin-bottom:0}
+  h2{
+    font-family:var(--display);
+    font-weight:700;
+    font-size:1.45rem;
+    letter-spacing:.06em;
+    margin:0 0 1.6rem;
+    padding-bottom:.7rem;
+    border-bottom:1px solid var(--rule);
+  }
+  h2 small{
+    font-family:var(--glyph);
+    font-size:.66rem;
+    font-weight:400;
+    letter-spacing:.3em;
+    color:var(--ink-soft);
+    float:right;
+    padding-top:.7rem;
+  }
+  p{margin:0 0 1.2rem}
+  .principle{
+    font-family:var(--display);
+    font-size:1.12rem;
+    line-height:1.9;
+    margin:0 0 1.9rem;
+  }
+
+  /* ── cast diagram ───────────────────────── */
+  .diagram{margin:0 0 2.2rem}
+  .diagram svg{display:block;width:100%;height:auto}
+  .d-box{fill:none;stroke-width:1.5}
+  .d-ink{stroke:var(--ink)}
+  .d-acc{stroke:var(--accent)}
+  .d-label{font-family:var(--body);font-weight:700;font-size:19px;fill:var(--ink)}
+  .d-label.acc{fill:var(--accent)}
+  .d-arrow{fill:none;stroke-width:1.5}
+  .d-tag{font-family:var(--glyph);font-size:13px;letter-spacing:.2em;fill:var(--ink)}
+  .d-tag.acc{fill:var(--accent)}
+
+  ol.steps{list-style:none;margin:0;padding:0;counter-reset:step}
+  ol.steps>li{
+    counter-increment:step;
+    position:relative;
+    padding:0 0 1.5rem 3rem;
+    margin:0 0 1.5rem;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  ol.steps>li:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+  ol.steps>li::before{
+    content:counter(step);
+    position:absolute;left:0;top:.2rem;
+    font-family:var(--glyph);
+    font-size:1.35rem;
+    color:var(--accent);
+    line-height:1;
+  }
+  ul.crit{list-style:none;margin:1rem 0 0;padding:0}
+  ul.crit>li{
+    position:relative;
+    padding-left:1.6rem;
+    margin-bottom:.7rem;
+    font-size:.96rem;
+  }
+  ul.crit>li:last-child{margin-bottom:0}
+  ul.crit>li::before{
+    content:"◇";
+    position:absolute;left:0;top:0;
+    font-family:var(--glyph);
+    color:var(--accent);
+  }
+
+  dl{margin:0}
+  dt{font-weight:700;margin:0 0 .45rem}
+  dd{
+    margin:0 0 1.7rem;
+    padding-left:1.1rem;
+    border-left:2px solid var(--rule);
+    color:var(--ink-soft);
+  }
+  dd:last-child{margin-bottom:0}
+  .g{font-family:var(--glyph);color:var(--ink)}
+
+  ul.plain{list-style:none;margin:0;padding:0}
+  ul.plain>li{
+    padding:0 0 1rem;
+    margin:0 0 1rem;
+    border-bottom:1px solid var(--rule-soft);
+  }
+  ul.plain>li:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+  .fine{font-size:.92rem;color:var(--ink-soft)}
+  .fine strong{color:var(--ink)}
+  b.hl{font-weight:700}
+
+  footer{padding:2.5rem 0 4rem}
+  footer p{
+    margin:0;
+    font-family:var(--glyph);
+    font-size:.72rem;
+    letter-spacing:.3em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+  }
+
+  .masthead>*{animation:rise .7s cubic-bezier(.2,.7,.3,1) backwards}
+  .masthead .eyebrow{animation-delay:.05s}
+  .masthead h1{animation-delay:.12s}
+  .masthead .lede{animation-delay:.22s}
+  @keyframes rise{from{opacity:0;transform:translateY(.5rem)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important}}
+
+  @media (max-width:34rem){
+    .wrap{padding:0 1.1rem}
+    .masthead{padding:3.2rem 0 2.2rem}
+    h2 small{display:none}
+    dd{padding-left:.9rem}
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead wrap">
+  <p class="eyebrow">first contact</p>
+  <h1>ファースト<br>コンタクト</h1>
+  <p class="lede">自作の未知言語だけで、初対面の知性と交信を成立させる遊び。一言でいえば——<em>言語を発明し、その言語で問い、その言語で問い返させる</em>。</p>
+</header>
+
+<main>
+<div class="wrap">
+
+  <section>
+    <h2>登場人物<small>cast</small></h2>
+    <div class="diagram">
+      <svg viewBox="0 0 640 200" role="img" aria-label="プレイヤーからオラクルへメッセージが送られ、オラクルからプレイヤーへリプライが返る図">
+        <defs>
+          <marker id="ah-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10" fill="none" stroke="#161B2B" stroke-width="1.5"/>
+          </marker>
+          <marker id="ah-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+            <path d="M0,0 L10,5 L0,10" fill="none" stroke="#4A3FD1" stroke-width="1.5"/>
+          </marker>
+        </defs>
+        <rect class="d-box d-ink" x="30" y="65" width="180" height="70"/>
+        <text class="d-label" x="120" y="107" text-anchor="middle">プレイヤー</text>
+        <rect class="d-box d-acc" x="430" y="65" width="180" height="70"/>
+        <text class="d-label acc" x="520" y="107" text-anchor="middle">オラクル</text>
+        <path class="d-arrow d-ink" d="M225,82 L415,82" marker-end="url(#ah-ink)"/>
+        <text class="d-tag" x="320" y="66" text-anchor="middle">メッセージ</text>
+        <path class="d-arrow d-acc" d="M415,118 L225,118" marker-end="url(#ah-acc)"/>
+        <text class="d-tag acc" x="320" y="148" text-anchor="middle">リプライ</text>
+      </svg>
+    </div>
+    <dl>
+      <dt>プレイヤー</dt>
+      <dd>言語を発明し、それだけで書いた1通をオラクルに送る。</dd>
+      <dt>オラクル</dt>
+      <dd>それを受け取る側。事前の指示や打ち合わせが一切ない新規のAI、または、何も知らされていない人。</dd>
+    </dl>
+    <p style="margin-top:1.6rem">以下、プレイヤーが送る1通を<b class="hl">メッセージ</b>、オラクルの返信を<b class="hl">リプライ</b>、メッセージに仕込む問題を<b class="hl">検証問題</b>、オラクルが自分で作って返す問いを<b class="hl">逆質問</b>と呼ぶ。</p>
+  </section>
+
+  <section>
+    <h2>ルール<small>rules</small></h2>
+    <ol class="steps">
+      <li>言語をゼロから発明し、メッセージを1通書く。狙いは二つ——オラクルに<b class="hl">検証問題（最低3問）を正答させる</b>ことと、<b class="hl">逆質問を書かせる</b>こと。検証問題は、どれも、本文の例をそのまま写せば解けてしまうものではいけない（丸暗記ではなく理解を試す）。</li>
+      <li>説明をひとことも添えずに、オラクルへ送る。</li>
+      <li>リプライが次の3つを満たせば<b class="hl">達成</b>。
+        <ul class="crit">
+          <li>検証問題にすべて正答している</li>
+          <li>逆質問がその言語で書かれている（1つでよい）。メッセージにそのまま現れている問いのコピーは認めない</li>
+          <li>それ以外のもの（自然言語の解説・挨拶・絵文字など）が一切含まれていない</li>
+        </ul>
+      </li>
+      <li>オラクルが普通の言葉で聞き返してきたら、<b class="hl">同じメッセージを無言でもう一度だけ</b>送ってよい（沈黙の再送）。それでもだめなら失敗。オラクルを取り替えてやり直す——AIなら該当する会話の記憶をリセットした新規インスタンス、人なら別の人。</li>
+      <li>達成できたら、<b class="hl">メッセージが短いほど優れた記録</b>。空白・改行を除いた文字数で数える。</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>破ってはいけないこと<small>fouls</small></h2>
+    <dl>
+      <dt>自然言語を持ち込まない。</dt>
+      <dd>メッセージの中にも前後にも、自然言語をひと文字も添えない。単語ごとの置き換え、文字ごとの換字、暗号化のように、変換を戻すと既存の言語が現れる仕掛けも同罪。文法と意味は、メッセージの中だけで確立されなければならない。</dd>
+      <dt>正解は本文から一意に。</dt>
+      <dd>検証問題の正解は、プレイヤーの頭の中ではなく、メッセージ本文から一意に定まらなければならない。誤植や誤りそのものは失格ではないが、誤りのせいで正解が一意に定まらなくなった問題は、正答として数えられない。</dd>
+      <dt>オラクルを改造しない。</dt>
+      <dd>システムプロンプトの調整、事前の訓練や打ち合わせは不可。</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>使ってよい文字<small>glyphs</small></h2>
+    <p class="principle">原則はひとつ——意味を運ぶのは発明した「語」であって、「文字」であってはならない。</p>
+    <dl>
+      <dt>表音文字（ラテン文字・仮名など）</dt>
+      <dd>組み合わせて語を作るのは自由。ただし、作った語が実在の語と綴りも意味も一致してはならない。</dd>
+      <dt>意味の慣習を持たない図形記号（<span class="g">●</span>、<span class="g">▲</span>、<span class="g">◇</span> など）</dt>
+      <dd>自由。字形から見て取れる構造——繰り返しの個数、塗りと白抜きの対比など——は慣習ではないので、利用してよい。</dd>
+      <dt>意味の慣習を持つ記号（<span class="g">=</span>、<span class="g">?</span>、数字、矢印など）</dt>
+      <dd>その慣習の意味や、それと紛らわしい意味で使うのは反則。まったく別の意味への転用は許されるが、オラクルを混乱させるだけで、たいてい損。</dd>
+      <dt>漢字などの表語文字（一文字が意味を担う文字）</dt>
+      <dd>使用禁止。意味と切り離して使うことは原理的には可能だが、意味の漏れを判定しきれないため、このゲームでは文字ごと締め出す。</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>記録<small>records</small></h2>
+    <ul class="plain">
+      <li>成功例が<b class="hl">1つ</b>あればよい。証明は、会話の完全な記録——AI相手なら会話の共有リンク、人間相手なら会話の記録。</li>
+      <li>記録はメッセージの文字数。短いほど強い。</li>
+      <li>AIの助けを借りて言語やメッセージを設計するのはチートではない。ただし、<b class="hl">自分の頭だけで設計して達成した記録は別格</b>であり、AI併用の記録がこれを上回ることはない。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>厳密な判定<small>for referees</small></h2>
+    <ul class="plain fine">
+      <li>逆質問と認められるのは、未知数（穴）を1つ以上持つ、その言語の文法に適った文で、プレイヤーが次の1通で言語内で一意に答えられるもの。引用に包んで見せただけの問いは不可——実際に問うていなければならない。</li>
+      <li>逆質問の新規性は、それを構成するトークンの列が、メッセージ本文の中に連続する列としてそのまま現れないこと、で判定する。空白・改行の違いは無視する。</li>
+      <li>逆質問の内容が自明でも成立とする（新規でありさえすればよい）。</li>
+      <li>リプライに、検証問題への解答と逆質問以外のものが含まれていたら失敗。言語内の余分な文でも、絵文字ひとつでも、例外はない。</li>
+    </ul>
+  </section>
+
+</div>
+</main>
+
+<footer class="wrap">
+  <p>first contact</p>
+</footer>
+
+</body>
+</html>
